@@ -71,18 +71,57 @@ body {
 	line-height: 1.5;
 }
 
-.newsletter-cta {
+input {
+	padding: 1rem;
+	border-radius: 0.5rem;
+	font: inherit;
+	font-size: var(--fs-400);
+	font-weight: var(--fw-reguler);
+	border: 1px solid var(--clr-neutral-200);
 }
 
-.newsletter-cta > .content {
+input::placeholder {
+	color: var(--clr-neutral-200);
+}
+
+.form-group {
 	display: grid;
-	gap: 1rem;
-	padding: 1.5rem;
+	gap: 0.5rem;
+	font-size: var(--fs-300);
+	font-weight: var(--fw-bold);
 }
 
-.newsletter-cta .title {
-	font-size: var(--fs-900);
+.button {
+	background: var(--clr-neutral-800);
+	color: var(--clr-neutral-100);
+	font: inherit;
 	font-weight: var(--fw-bold);
+	border: 0;
+	padding: 1rem;
+	border-radius: 0.5rem;
+}
+
+.button:hover,
+.button:focus-visible {
+	position: relative;
+	background-image: linear-gradient(
+		-90deg,
+		var(--clr-accent-400),
+		var(--clr-accent-500)
+	);
+}
+
+.button:hover::after,
+.button:focus-visible::after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	background: inherit;
+	border-radius: inherit;
+	translate: 0 1.5rem;
+	filter: blur(1rem);
+	opacity: 0.5;
 }
 
 .checkmark-list {
@@ -97,4 +136,24 @@ body {
 
 .checkmark-list li::before {
 	content: url(assets/images/icon-list.svg);
+}
+
+.newsletter-cta {
+}
+
+.newsletter-cta > .content {
+	display: grid;
+	gap: 1rem;
+	padding: 1.5rem;
+}
+
+.newsletter-cta .title {
+	font-size: var(--fs-900);
+	font-weight: var(--fw-bold);
+}
+
+.newsletter-cta form {
+	margin-block-start: 1.25rem;
+	display: grid;
+	gap: 1.5rem;
 }
