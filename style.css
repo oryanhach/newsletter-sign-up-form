@@ -1,5 +1,35 @@
-/* Box sizing rules */
+@font-face {
+	font-family: 'Roboto';
+	src: local('Roboto Regular'), url('assets/fonts/Roboto-Regular.ttf');
+	font-weight: 400;
+}
 
+@font-face {
+	font-family: 'Roboto';
+	src: local('Roboto Bold'), url('assets/fonts/Roboto-Regular.ttf');
+	font-weight: 700;
+}
+
+:root {
+	--clr-neutral-800: hsl(234, 29%, 20%);
+	--clr-neutral-700: hsl(235, 18%, 26%);
+	--clr-neutral-200: hsl(231, 7%, 60%);
+	--clr-neutral-100: hsl(0, 0%, 100%);
+
+	--clr-accent-400: hsl(4, 100%, 67%);
+	--clr-accent-500: hsl(347, 100%, 66%);
+
+	--ff-base: Roboto, sans-serif;
+
+	--fw-reguler: 400;
+	--fw-bold: 700;
+
+	--fs-300: 0.825rem;
+	--fs-400: 1rem;
+	--fs-900: 2.5rem;
+}
+
+/* Box sizing rules */
 *,
 *::before,
 *::after {
@@ -18,7 +48,7 @@ h2,
 h3,
 h4,
 p,
-fiture,
+figure,
 blockquote,
 dl,
 dd {
@@ -29,4 +59,42 @@ dd {
 ul[role='list'],
 ol[role='list'] {
 	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: var(--ff-base);
+	font-size: var(--fs-400);
+	font-weight: var(--fw-reguler);
+	color: var(--clr-neutral-800);
+	line-height: 1.5;
+}
+
+.newsletter-cta {
+}
+
+.newsletter-cta > .content {
+	display: grid;
+	gap: 1rem;
+	padding: 1.5rem;
+}
+
+.newsletter-cta .title {
+	font-size: var(--fs-900);
+	font-weight: var(--fw-bold);
+}
+
+.checkmark-list {
+	display: grid;
+	gap: 0.6255rem;
+}
+
+.checkmark-list li {
+	display: grid;
+	grid-template-columns: 2.5rem auto;
+}
+
+.checkmark-list li::before {
+	content: url(assets/images/icon-list.svg);
 }
